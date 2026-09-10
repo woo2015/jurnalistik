@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OST Jurnalistik</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    :root {
+      --brand-primary: #f08f19;
+      --brand-secondary: #f27825;
+    }
+
+    .brand-gradient {
+      background: linear-gradient(120deg, var(--brand-primary), var(--brand-secondary));
+    }
+
+    .slider-image {
+      opacity: 0;
+      transform: scale(1.03);
+      transition: opacity 900ms ease, transform 4500ms ease;
+    }
+
+    .slider-image.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .dot.active {
+      width: 1.5rem;
+      background-color: white;
+    }
+
+    .float-soft {
+      animation: floatSoft 4s ease-in-out infinite;
+    }
+
+    @keyframes floatSoft {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ig-embed-wrap {
+      max-width: 540px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+    }
+
+    .ig-embed-wrap .instagram-media {
+      margin: 0 auto !important;
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-800">
+  <header class="sticky top-0 z-30 bg-white/90 backdrop-blur-sm border-b border-slate-200">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-3">
+        <img src="namalogo.png" alt="Logo OST Jurnalistik" class="h-11 w-11 object-contain" />
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Ekstrakurikuler Sekolah</p>
+          <h1 class="text-lg font-bold text-slate-900">OST Jurnalistik</h1>
+        </div>
+      </div>
+
+      <div class="relative">
+        <button id="menu-btn" type="button" class="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 transition hover:border-slate-400" aria-label="Buka menu" aria-expanded="false" aria-controls="menu-panel">
+          <span class="sr-only">Buka menu</span>
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+
+        <nav id="menu-panel" class="absolute right-0 top-14 hidden min-w-52 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg">
+          <a href="#alasan" class="menu-link block px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100">Alasan Join</a>
+          <a href="#karya" class="menu-link block px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100">Karya Kami</a>
+          <a href="#angka" class="menu-link block px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100">Pencapaian</a>
+          <a href="#program" class="menu-link block px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100">Program</a>
+          <a href="#instagram" class="menu-link block px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100">Our Post on IG</a>
+          <a href="#emagazine" class="menu-link block px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100">E-Magazine</a>
+          <a href="#flyer" class="menu-link block px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100">Flyer</a>
+          <a href="#kontak" class="menu-link block px-4 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-100">Kontak</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative h-[72vh] min-h-[460px] w-full overflow-hidden">
+      <div id="banner-slider" class="relative h-full w-full" data-slider>
+        <img src="banner.jpeg" alt="Banner OST Jurnalistik 1" class="slider-image active absolute inset-0 h-full w-full object-cover" />
+        <img src="banner2.jpeg" alt="Banner OST Jurnalistik 2" class="slider-image absolute inset-0 h-full w-full object-cover" />
+      </div>
+
+      <div class="absolute inset-0 bg-black/40"></div>
+
+      <div class="relative z-10 mx-auto flex h-full max-w-6xl items-end px-4 pb-14">
+        <div class="max-w-2xl">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-200">Media | Kreativitas | Informasi</p>
+          <h2 class="mt-2 text-4xl font-black leading-tight text-white md:text-6xl">OST Jurnalistik</h2>
+          <p class="mt-4 max-w-xl text-base text-slate-100 md:text-lg">Wadah siswa untuk belajar menulis, meliput, dan memproduksi konten jurnalistik sekolah secara modern dan profesional.</p>
+          <div class="mt-6 flex gap-3">
+            <a href="#flyer" class="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">Lihat Info Kegiatan</a>
+            <a href="#kontak" class="rounded-full border border-white/80 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10">Kontak</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-2" data-dots-for="banner-slider"></div>
+    </section>
+
+    <section id="alasan" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+      <div class="max-w-2xl reveal">
+        <h3 class="text-3xl font-bold text-slate-900">Alasan Join OST Jurnalistik</h3>
+        <p class="mt-3 text-slate-600">Belajar komunikasi, kepemimpinan, dan kreativitas dalam satu tempat yang aktif produksi konten sekolah.</p>
+      </div>
+
+      <div class="mt-10 grid gap-8 md:grid-cols-2 md:items-center">
+        <div class="reveal">
+          <img src="banner2.jpeg" alt="Aktivitas tim OST Jurnalistik" class="h-[320px] w-full rounded-2xl object-cover" />
+        </div>
+
+        <div class="relative reveal">
+          <div class="float-soft rounded-2xl border border-orange-200 bg-white p-6 shadow-xl shadow-orange-100/70">
+            <p class="text-sm font-semibold uppercase tracking-[0.14em] text-orange-500">Kenapa Harus Join?</p>
+            <ul class="mt-4 space-y-4 text-slate-700">
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-orange-500 text-xs font-bold text-white">✓</span>
+                <span>Meningkatkan kemampuan menulis berita, artikel, dan caption informatif.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-orange-500 text-xs font-bold text-white">✓</span>
+                <span>Terbiasa meliput kegiatan sekolah dengan standar kerja tim yang profesional.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-orange-500 text-xs font-bold text-white">✓</span>
+                <span>Membangun portofolio karya nyata untuk lomba, kampus, dan masa depan.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="karya" class="brand-gradient py-16 text-white md:py-20">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="max-w-2xl reveal">
+          <h3 class="text-3xl font-bold">Karya Kami</h3>
+          <p class="mt-3 text-white/90">Hasil liputan, dokumentasi visual, dan narasi yang kami produksi untuk menyampaikan cerita terbaik sekolah.</p>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <article class="reveal border-b border-white/35 pb-4">
+            <p class="text-xs uppercase tracking-[0.16em] text-white/80">Artikel</p>
+            <h4 class="mt-2 text-xl font-semibold">Berita Sekolah</h4>
+            <p class="mt-2 text-sm text-white/90">Peliputan agenda utama sekolah dengan struktur berita yang rapi dan faktual.</p>
+          </article>
+          <article class="reveal border-b border-white/35 pb-4">
+            <p class="text-xs uppercase tracking-[0.16em] text-white/80">Visual</p>
+            <h4 class="mt-2 text-xl font-semibold">Foto dan Video Event</h4>
+            <p class="mt-2 text-sm text-white/90">Dokumentasi momen penting dalam format visual yang modern dan informatif.</p>
+          </article>
+          <article class="reveal border-b border-white/35 pb-4">
+            <p class="text-xs uppercase tracking-[0.16em] text-white/80">Digital</p>
+            <h4 class="mt-2 text-xl font-semibold">Konten Media Sosial</h4>
+            <p class="mt-2 text-sm text-white/90">Distribusi informasi cepat melalui desain dan copywriting yang relevan untuk siswa.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="angka" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+      <div class="max-w-2xl reveal">
+        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-600">The Excellence of OST Jurnalistik</p>
+        <h3 class="mt-2 text-3xl font-bold text-slate-900">Pencapaian Dalam Angka</h3>
+        <p class="mt-3 text-slate-600">Terinspirasi dari layout sekolah modern: angka ditampilkan jelas agar progres tim jurnalistik mudah terlihat.</p>
+      </div>
+
+      <div class="mt-10 grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+        <div class="reveal border-l-4 border-orange-500 pl-4">
+          <p class="text-4xl font-black text-slate-900">120+</p>
+          <p class="mt-2 text-sm text-slate-600">Artikel dan berita sekolah terbit setiap tahun ajaran.</p>
+        </div>
+        <div class="reveal border-l-4 border-orange-500 pl-4">
+          <p class="text-4xl font-black text-slate-900">35+</p>
+          <p class="mt-2 text-sm text-slate-600">Anggota aktif lintas divisi: reporter, editor, foto, dan desain.</p>
+        </div>
+        <div class="reveal border-l-4 border-orange-500 pl-4">
+          <p class="text-4xl font-black text-slate-900">18+</p>
+          <p class="mt-2 text-sm text-slate-600">Liputan event sekolah, lomba, dan agenda kolaborasi tiap semester.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="program" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+      <div class="max-w-2xl reveal">
+        <h3 class="text-3xl font-bold text-slate-900">Program Menarik Jurnalistik</h3>
+        <p class="mt-3 text-slate-600">Kegiatan rutin yang dirancang agar anggota terus berkembang dari latihan sampai publikasi.</p>
+      </div>
+
+      <div class="mt-10 grid gap-10 md:grid-cols-3">
+        <div class="reveal">
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-orange-600">01</p>
+          <h4 class="mt-2 text-xl font-semibold text-slate-900">Kelas Menulis</h4>
+          <p class="mt-2 text-slate-600">Belajar struktur berita, teknik wawancara, dan penulisan yang enak dibaca.</p>
+        </div>
+        <div class="reveal">
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-orange-600">02</p>
+          <h4 class="mt-2 text-xl font-semibold text-slate-900">Simulasi Liputan</h4>
+          <p class="mt-2 text-slate-600">Praktik langsung peliputan event dengan pembagian peran reporter dan editor.</p>
+        </div>
+        <div class="reveal">
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-orange-600">03</p>
+          <h4 class="mt-2 text-xl font-semibold text-slate-900">Publishing Day</h4>
+          <p class="mt-2 text-slate-600">Hari publikasi karya di mading, web, dan media sosial untuk membangun konsistensi.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="instagram" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+      <div class="text-center reveal">
+        <h3 class="text-3xl font-bold text-slate-900">Our Post on IG</h3>
+        <p class="mx-auto mt-3 max-w-2xl text-slate-600">Postingan Instagram OST Jurnalistik Spemdalas untuk update kegiatan, karya terbaru, dan momen terbaik tim jurnalistik.</p>
+      </div>
+
+      <div class="mt-8 reveal">
+        <div class="ig-embed-wrap">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DdD-wVYFJnO/" data-instgrm-version="14"></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="emagazine" class="bg-slate-950 py-16 text-white md:py-20">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="max-w-3xl reveal">
+          <h3 class="text-3xl font-bold">Baca E-Magazine Spemdalas</h3>
+          <p class="mt-3 text-slate-300">E-Magazine ini adalah karya OST Jurnalistik yang berisi liputan, opini, dan dokumentasi cerita sekolah dalam format digital interaktif.</p>
+          <button id="open-edition-modal" type="button" class="mt-6 inline-flex rounded-full bg-orange-500 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-600">
+            Baca Sekarang
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="flyer" class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+      <div class="max-w-2xl">
+        <h3 class="text-3xl font-bold text-slate-900">Flyer Digital OST Jurnalistik</h3>
+        <p class="mt-3 text-slate-600">Area ini disiapkan untuk flyer promosi berukuran A4. Gambar akan berganti otomatis setiap 4 detik.</p>
+      </div>
+
+      <div class="mt-8 flex justify-center">
+        <div id="flyer-slider" class="relative w-full max-w-[420px] overflow-hidden rounded-2xl border border-slate-200 bg-slate-100" style="aspect-ratio: 210 / 297;" data-slider>
+          <img src="flyer.png" alt="Flyer OST Jurnalistik 1" class="slider-image active absolute inset-0 h-full w-full object-contain" />
+          <img src="flyer2.png" alt="Flyer OST Jurnalistik 2" class="slider-image absolute inset-0 h-full w-full object-contain" />
+        </div>
+      </div>
+
+      <div class="mt-5 flex justify-center gap-2" data-dots-for="flyer-slider"></div>
+    </section>
+  </main>
+
+  <footer id="kontak" class="bg-slate-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-10">
+      <div class="flex flex-col gap-8 border-b border-white/15 pb-8 md:flex-row md:items-center md:justify-between">
+        <div class="flex items-center gap-3">
+          <img src="namalogo.png" alt="Logo OST Jurnalistik" class="h-11 w-11 object-contain" />
+          <div>
+            <p class="text-base font-semibold">OST Jurnalistik</p>
+            <p class="text-sm text-slate-300">Slogan: Menulis Fakta, Menyuarakan Makna.</p>
+          </div>
+        </div>
+
+        <a href="https://www.instagram.com/dalas_journalism_club" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-orange-400/70 px-4 py-2 text-sm font-semibold text-orange-300 transition hover:bg-orange-500 hover:text-white">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.2" cy="6.8" r="1"></circle>
+          </svg>
+          Instagram Club
+        </a>
+      </div>
+
+      <div class="mt-5 flex flex-col gap-3 text-xs text-slate-400 md:flex-row md:items-center md:justify-between">
+        <div class="flex items-center gap-2">
+          <img src="namalogo.png" alt="Logo kecil OST Jurnalistik" class="h-5 w-5 object-contain" />
+          <p>Copyright © <span id="year"></span> OST Jurnalistik. All rights reserved.</p>
+        </div>
+        <p>Ekstrakurikuler Jurnalistik Sekolah | Modern and Professional</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="edition-modal" class="fixed inset-0 z-40 hidden items-center justify-center bg-black/65 px-4">
+    <div class="w-full max-w-md rounded-2xl bg-white p-6 text-slate-800 shadow-2xl">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-orange-600">E-Magazine</p>
+          <h4 class="mt-1 text-xl font-bold">Pilih Edisi</h4>
+        </div>
+        <button id="close-edition-modal" type="button" class="rounded-full border border-slate-300 px-3 py-1 text-sm font-semibold text-slate-600 transition hover:bg-slate-100">Tutup</button>
+      </div>
+
+      <button id="open-edition-1" type="button" class="mt-5 w-full rounded-xl border border-orange-200 bg-orange-50 px-4 py-3 text-left transition hover:bg-orange-100">
+        <p class="text-sm font-semibold text-slate-900">Edisi 1</p>
+        <p class="mt-1 text-xs text-slate-600">Mengenang Jasa Penjaga Bangsa</p>
+      </button>
+    </div>
+  </div>
+
+  <div id="reader-view" class="fixed inset-0 z-50 hidden bg-black">
+    <button id="close-reader-view" type="button" class="absolute left-3 top-3 z-10 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:bg-white">
+      Kembali
+    </button>
+    <div class="h-full w-full px-2 pb-2 pt-12">
+      <div style="position:relative;width:100%;height:100%;">
+        <iframe style="position:absolute;border:none;width:100%;height:100%;left:0;top:0;" src="https://online.fliphtml5.com/kemkv/Mengenang-Jasa-Penjaga-Bangsa/" title="Fekri Magazine - Mengenang Jasa Penjaga Bangsa" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function createDots(sliderId, total) {
+      const dotsContainer = document.querySelector(`[data-dots-for="${sliderId}"]`);
+      if (!dotsContainer) return [];
+
+      dotsContainer.innerHTML = "";
+      const dots = [];
+      for (let i = 0; i < total; i += 1) {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "dot h-2 w-2 rounded-full bg-white/60 transition-all duration-300";
+        dot.setAttribute("aria-label", `Pindah ke slide ${i + 1}`);
+        dotsContainer.appendChild(dot);
+        dots.push(dot);
+      }
+      return dots;
+    }
+
+    function initSlider(sliderElement) {
+      const slides = Array.from(sliderElement.querySelectorAll(".slider-image"));
+      if (slides.length <= 1) return;
+
+      const sliderId = sliderElement.id;
+      const dots = createDots(sliderId, slides.length);
+      let current = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === index);
+        });
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === index);
+          dot.classList.toggle("bg-white", i === index);
+          dot.classList.toggle("bg-white/60", i !== index);
+        });
+      }
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          current = index;
+          showSlide(current);
+        });
+      });
+
+      showSlide(current);
+
+      setInterval(() => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      }, 4000);
+    }
+
+    const menuButton = document.getElementById("menu-btn");
+    const menuPanel = document.getElementById("menu-panel");
+    const menuLinks = document.querySelectorAll(".menu-link");
+    const editionModal = document.getElementById("edition-modal");
+    const openEditionModal = document.getElementById("open-edition-modal");
+    const closeEditionModal = document.getElementById("close-edition-modal");
+    const openEdition1 = document.getElementById("open-edition-1");
+    const readerView = document.getElementById("reader-view");
+    const closeReaderView = document.getElementById("close-reader-view");
+
+    function toggleMenu() {
+      const isOpen = !menuPanel.classList.contains("hidden");
+      menuPanel.classList.toggle("hidden", isOpen);
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+    }
+
+    menuButton.addEventListener("click", toggleMenu);
+
+    document.addEventListener("click", (event) => {
+      if (!menuPanel.contains(event.target) && !menuButton.contains(event.target)) {
+        menuPanel.classList.add("hidden");
+        menuButton.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        menuPanel.classList.add("hidden");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    function openModal(modalElement) {
+      modalElement.classList.remove("hidden");
+      modalElement.classList.add("flex");
+    }
+
+    function closeModal(modalElement) {
+      modalElement.classList.add("hidden");
+      modalElement.classList.remove("flex");
+    }
+
+    openEditionModal.addEventListener("click", () => openModal(editionModal));
+    closeEditionModal.addEventListener("click", () => closeModal(editionModal));
+
+    editionModal.addEventListener("click", (event) => {
+      if (event.target === editionModal) closeModal(editionModal);
+    });
+
+    openEdition1.addEventListener("click", () => {
+      closeModal(editionModal);
+      readerView.classList.remove("hidden");
+      document.body.classList.add("overflow-hidden");
+    });
+
+    closeReaderView.addEventListener("click", () => {
+      readerView.classList.add("hidden");
+      document.body.classList.remove("overflow-hidden");
+      document.getElementById("emagazine").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    document.getElementById("year").textContent = new Date().getFullYear();
+    if (window.instgrm && window.instgrm.Embeds) {
+      window.instgrm.Embeds.process();
+    }
+
+    document.querySelectorAll("[data-slider]").forEach(initSlider);
+  </script>
+  <script async src="https://www.instagram.com/embed.js"></script>
+</body>
+</html>
